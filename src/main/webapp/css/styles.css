@@ -10271,6 +10271,6 @@ body {
   min-height: 100%;
 }
 
-.container {
+body > .container {
   flex-grow: 1;
 }
