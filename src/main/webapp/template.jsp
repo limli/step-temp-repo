@@ -7,8 +7,6 @@
   <meta name="description" content="" />
   <meta name="author" content="" />
   <title>Freelancer - Start Bootstrap Theme</title>
-  <!-- Favicon-->
-  <link rel="icon" type="image/x-icon" href="assets/img/favicon.ico" />
   <!-- Font Awesome icons (free version)-->
   <script src="https://use.fontawesome.com/releases/v5.13.0/js/all.js" crossorigin="anonymous"></script>
   <!-- Google fonts-->
@@ -21,7 +19,9 @@
 
 <body id="page-top">
   <%@include file="/WEB-INF/components/header.html"%>
-  <div>asdasd</div>
+  <div class="container">
+    <div>asdasd</div>
+  </div>
   <%@include file="/WEB-INF/components/footer.html"%>
   <!-- Bootstrap core JS-->
   <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>

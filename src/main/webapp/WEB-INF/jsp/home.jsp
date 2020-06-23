@@ -7,8 +7,6 @@
   <meta name="description" content="" />
   <meta name="author" content="" />
   <title>Freelancer - Start Bootstrap Theme</title>
-  <!-- Favicon-->
-  <link rel="icon" type="image/x-icon" href="assets/img/favicon.ico" />
   <!-- Font Awesome icons (free version)-->
   <script src="https://use.fontawesome.com/releases/v5.13.0/js/all.js" crossorigin="anonymous"></script>
   <!-- Google fonts-->
@@ -197,16 +195,6 @@
       </div>
     </div>
   </section>
-  <%@include file="/WEB-INF/components/footer.html"%>
-  <!-- Copyright Section-->
-  <div class="copyright py-4 text-center text-white">
-    <div class="container"><small>Copyright © Your Website 2020</small></div>
-  </div>
-  <!-- Scroll to Top Button (Only visible on small and extra-small screen sizes)-->
-  <div class="scroll-to-top d-lg-none position-fixed">
-    <a class="js-scroll-trigger d-block text-center text-white rounded" href="#page-top"><i
-        class="fa fa-chevron-up"></i></a>
-  </div>
   <!-- Portfolio Modals-->
   <!-- Portfolio Modal 1-->
   <div class="portfolio-modal modal fade" id="portfolioModal1" tabindex="-1" role="dialog"
@@ -442,6 +430,7 @@
       </div>
     </div>
   </div>
+  <%@include file="/WEB-INF/components/footer.html"%>
   <!-- Bootstrap core JS-->
   <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
   <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/js/bootstrap.bundle.min.js"></script>
