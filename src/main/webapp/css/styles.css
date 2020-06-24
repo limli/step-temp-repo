@@ -10260,6 +10260,8 @@ form .row:first-child .floating-label-form-group {
   background-color: #1a252f;
 }
 
+/* Stuff above is part of template */
+
 /* to make the container expand to fill the page */
 html {
   height: 100%
@@ -10273,4 +10275,29 @@ body {
 
 body > .container {
   flex-grow: 1;
+}
+
+/* Search Menu */
+.search-menu-container {
+  position: relative;
+}
+
+.search-menu {
+  position: absolute;
+  top: 0;
+  left: 0;
+  border: 0.125rem solid #ced4da;
+  background-color: white;
+  box-shadow: 0 0.5rem 1rem rgba(0,0,0,.175);
+  width: 100%;
+}
+
+.search-menu-pic {
+  max-width: 50px;
+  max-height: 50px;
+}
+.search-menu-item:hover {
+  color: #212529;
+  background-color: rgba(0, 0, 0, 0.075);
+  cursor: pointer;
 }
