@@ -98,7 +98,8 @@ const user =
   'restaurantsFollowed': [
     {
       'id': 2345,
-      'name': 'Starbucks'
+      'name': 'Starbucks',
+      'pic': '/assets/img/avataaars.svg'
     },
   ],
   'tagsFollowed': [
@@ -124,6 +125,8 @@ function configureUserProfile(user) {
   configureDealsPublishedBy(user);
   configureUserFollowers(user);
   configureUsersFollowedBy(user);
+  configureRestaurantsFollowedBy(user);
+  configureTagsFollowedBy(user);
 }
 
 function createDealCard(deal) {
@@ -169,15 +172,19 @@ function configureDealsPublishedBy(user) {
 
 function createSimpleUserContainer(user) {
   const userContainer = document.createElement('div');
+  userContainer.className = 'mb-2';
+  const imageContainer = document.createElement('div');
+  imageContainer.className = 'w-25 d-inline-block text-center';
   const profileImage = document.createElement('img');
   profileImage.src = user.pic;
   profileImage.alt = 'profile photo';
-  profileImage.className = 'img-fluid d-inline-block w-25 p-3';
-  userContainer.appendChild(profileImage);
+  profileImage.className = 'img-fluid w-50 mx-auto';
+  imageContainer.appendChild(profileImage);
+  userContainer.appendChild(imageContainer);
 
   const username = document.createElement('a');
   username.innerText = user.username;
-  username.className = 'h6 d-inline-block w-75 pl-2';
+  username.className = 'h6 d-inline-block w-75';
   username.href = '/profile/' + user.id;
   userContainer.appendChild(username);
   return userContainer;
@@ -199,6 +206,50 @@ function configureUsersFollowedBy(user) {
 function configureUserFollowers(user) {
   const followersContainer = document.getElementById('followers');
   configureUserList(user.followers, followersContainer);
+}
+
+function createSimpleRestaurantContainer(restaurant) {
+  const restaurantContainer = document.createElement('div');
+  restaurantContainer.className = 'mb-2';
+  const imageContainer = document.createElement('div');
+  imageContainer.className = 'w-25 d-inline-block text-center';
+  const restaurantImage = document.createElement('img');
+  restaurantImage.src = restaurant.pic;
+  restaurantImage.alt = 'restaurant photo';
+  restaurantImage.className = 'img-fluid w-50 mx-auto';
+  imageContainer.appendChild(restaurantImage);
+  restaurantContainer.appendChild(imageContainer);
+
+  const restaurantName = document.createElement('a');
+  restaurantName.innerText = restaurant.name;
+  restaurantName.className = 'h6 d-inline-block w-75';
+  restaurantName.href = '/restaurant/' + restaurant.id;
+  restaurantContainer.appendChild(restaurantName);
+  return restaurantContainer;
+}
+
+function configureRestaurantsFollowedBy(user) {
+  const restaurantsContainer = document.getElementById('restaurants');
+  for (const restaurant of user.restaurantsFollowed) {
+    const restaurantContainer = createSimpleRestaurantContainer(restaurant);
+    restaurantsContainer.appendChild(restaurantContainer);
+  }
+}
+
+function createTagContainer(tag) {
+  const tagContainer = document.createElement('span');
+  tagContainer.className = 'badge badge-pill badge-primary';
+  tagContainer.innerText = tag.name;
+  return tagContainer;
+}
+
+function configureTagsFollowedBy(user) {
+  const tagsContainer = document.getElementById('tags');
+  tagsContainer.classList.add('d-flex', 'flex-wrap');
+  for (const tag of user.tagsFollowed) {
+    const tagContainer = createTagContainer(tag);
+    tagsContainer.appendChild(tagContainer);
+  }
 }
 
 window.onload = function() {
