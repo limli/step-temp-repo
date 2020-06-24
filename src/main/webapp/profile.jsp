@@ -23,33 +23,38 @@
   <%@include file="/WEB-INF/components/header.html"%>
   <div id="user-profile" class="page-section">
     <div class="container">
-      <div class="row">
+      <div class="row mb-5">
         <div class="col-sm-4 col-lg-3">
           <img id="profile-photo" class="img-fluid mb-4" alt="profile-photo"/>
           <button id="follow-btn" type="button" class="btn btn-primary">Follow</button>
         </div>
         <div class="col-sm-8 col-lg-9">
+          <h3>
+            Username: <span id="username"></span>
+          </h3>
+          <h6 class="text-secondary">
+            Name: <span id="name"></span>
+          </h6>
+          <h6 class="text-secondary">
+            Email: <span id="email"></span>
+          </65>
           <div>
-            Name: 
-            <span id="name"></span>
-          </div>
-          <div>
-            Username: 
-            <span id="username"></span>
-          </div>
-          <div>
-            Email: 
-            <span id="email"></span>
-          </div>
-          <div>
-            Bio:
-            <span id="bio"></span>
+            Bio: <span id="bio"></span>
           </div>
         </div>
       </div>
-      <div id="followers"></div>
-      <div id="following"></div>
-      <div id="deals" class="card-columns"></div>
+      <nav>
+        <div class="nav nav-tabs mb-2" id="nav-tab" role="tablist">
+          <a class="nav-item nav-link active" id="nav-deals-tab" data-toggle="tab" href="#deals" role="tab" aria-controls="deals" aria-selected="true">Deals</a>
+          <a class="nav-item nav-link" id="nav-followers-tab" data-toggle="tab" href="#followers" role="tab" aria-controls="followers" aria-selected="false">Followers</a>
+          <a class="nav-item nav-link" id="nav-following-tab" data-toggle="tab" href="#following" role="tab" aria-controls="following" aria-selected="false">Following</a>
+        </div>
+      </nav>
+      <div class="tab-content" id="nav-tabContent">
+        <div class="tab-pane fade show active" id="deals" role="tabpanel" aria-labelledby="nav-deals-tab"></div>
+        <div class="tab-pane fade" id="followers" role="tabpanel" aria-labelledby="nav-followers-tab"></div>
+        <div class="tab-pane fade" id="following" role="tabpanel" aria-labelledby="nav-following-tab"></div>
+      </div>
     </div>
   </div>
   <%@include file="/WEB-INF/components/footer.html"%>

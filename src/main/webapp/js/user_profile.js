@@ -48,7 +48,37 @@ const user =
         'id': 1234,
         'name': 'Alice Chen',
         'username': 'alicechen',
-        'pic': '/some-url-12345.jpg'
+        'pic': '/assets/img/avataaars.svg'
+      },
+      {
+        'id': 1234,
+        'name': 'Alice Chen',
+        'username': 'alicechen',
+        'pic': '/assets/img/avataaars.svg'
+      },
+      {
+        'id': 1234,
+        'name': 'Alice Chen',
+        'username': 'alicechen',
+        'pic': '/assets/img/avataaars.svg'
+      },
+      {
+        'id': 1234,
+        'name': 'Alice Chen',
+        'username': 'alicechen',
+        'pic': '/assets/img/avataaars.svg'
+      },
+      {
+        'id': 1234,
+        'name': 'Alice Chen',
+        'username': 'alicechen',
+        'pic': '/assets/img/avataaars.svg'
+      },
+      {
+        'id': 1234,
+        'name': 'Alice Chen',
+        'username': 'alicechen',
+        'pic': '/assets/img/avataaars.svg'
       }
   ],
   'following': [
@@ -56,22 +86,26 @@ const user =
           'id': 1234,
           'name': 'Alice Chen',
           'username': 'alicechen',
-          'pic': '/some-url-12345.jpg'
+          'pic': '/assets/img/avataaars.svg'
       },
       {
-          'id': 2345,
-          'name': 'Starbucks',
-          'username': 'starbucks'
-      },
-      {
-          'id': 2345,
-          'type': 'restaurant',
-          'name': 'Starbucks'
-      },
-      {
-          'id': 23452,
-          'name': 'coffee'
-      }
+        'id': 2345,
+        'name': 'Starbucks',
+        'username': 'starbucks',
+        'pic': '/assets/img/avataaars.svg'
+    },
+  ],
+  'restaurantsFollowed': [
+    {
+      'id': 2345,
+      'name': 'Starbucks'
+    },
+  ],
+  'tagsFollowed': [
+    {
+      'id': 23452,
+      'name': 'coffee'
+    }
   ]
 }
 
@@ -88,6 +122,8 @@ function configureUserProfile(user) {
   profileImage.src = user.picture;
 
   configureDealsPublishedBy(user);
+  configureUserFollowers(user);
+  configureUsersFollowedBy(user);
 }
 
 function createDealCard(deal) {
@@ -101,7 +137,7 @@ function createDealCard(deal) {
   const dealBody = document.createElement('div');
   dealBody.className = 'card-body';
   
-  const dealName = document.createElement('h4');
+  const dealName = document.createElement('h6');
   dealName.className = 'card-title'
   dealName.innerText = deal.name;
 
@@ -124,10 +160,45 @@ function createDealCard(deal) {
 
 function configureDealsPublishedBy(user) {
   const dealsUploadedContainer = document.getElementById('deals');
+  dealsUploadedContainer.classList.add('card-columns');
   for (const deal of user.dealsUploaded) {
     const dealCard = createDealCard(deal);
     dealsUploadedContainer.appendChild(dealCard);
   }
+}
+
+function createSimpleUserContainer(user) {
+  const userContainer = document.createElement('div');
+  const profileImage = document.createElement('img');
+  profileImage.src = user.pic;
+  profileImage.alt = 'profile photo';
+  profileImage.className = 'img-fluid d-inline-block w-25 p-3';
+  userContainer.appendChild(profileImage);
+
+  const username = document.createElement('a');
+  username.innerText = user.username;
+  username.className = 'h6 d-inline-block w-75 pl-2';
+  username.href = '/profile/' + user.id;
+  userContainer.appendChild(username);
+  return userContainer;
+}
+
+function configureUserList(userList, container) {
+  for (const user of userList) {
+    const userContainer = createSimpleUserContainer(user);
+    userContainer.classList.add('mw-25');
+    container.appendChild(userContainer);
+  }
+}
+
+function configureUsersFollowedBy(user) {
+  const followeeContainer = document.getElementById('following');
+  configureUserList(user.following, followeeContainer);
+}
+
+function configureUserFollowers(user) {
+  const followersContainer = document.getElementById('followers');
+  configureUserList(user.followers, followersContainer);
 }
 
 window.onload = function() {
