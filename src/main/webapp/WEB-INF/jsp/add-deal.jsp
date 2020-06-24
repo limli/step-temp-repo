@@ -26,11 +26,16 @@
       <h2 class="page-section-heading text-center text-secondary mb-4">Submit A Deal</h2>
       <div class="row">
         <div class="col-lg-8 mx-auto">
-          <form id="contactForm" name="dealform" novalidate class="needs-validation">
-
+          <form
+            action="/api/deals"
+            method="post"
+            id="contactForm"
+            name="dealform"
+            novalidate class="needs-validation"
+          >
             <div class="form-group validate-me">
               <label for="img-input">Choose Image</label>
-              <input type="file" class="form-control-file" id="img-input" required>
+              <input name="pic" type="file" class="form-control-file" id="img-input" required>
               <div class="invalid-feedback">
                 Please add an image.
               </div>
@@ -39,7 +44,7 @@
 
             <div class="form-group validate-me">
               <label for="description-input">Description</label>
-              <input type="text" class="form-control" id="description-input" required>
+              <input name="description" type="text" class="form-control" id="description-input" required>
               <div class="invalid-feedback">
                 Please add a description.
               </div>
@@ -47,7 +52,7 @@
 
             <div class="form-group">
               <label for="source-input">Source</label>
-              <input type="text" class="form-control" id="source-input">
+              <input name="source" type="text" class="form-control" id="source-input">
             </div>
 
             <div class="form-group validate-me">
@@ -55,14 +60,14 @@
               <div class="row">
                 <div class="col-12 col-md-6">
                   <label class="mb-0 mr-1" for="from-date">From</label>
-                  <input class="mr-1 form-control" type="date" id="from-date" required>
+                  <input name="from" class="mr-1 form-control" type="date" id="from-date" required>
                   <div class="invalid-feedback">
                     Please select date.
                   </div>
                 </div>
                 <div class="col-12 col-md-6">
                   <label class="mb-0 mr-1" for="to-date">To</label>
-                  <input class="form-control" type="date" id="to-date" required>
+                  <input name="to" class="form-control" type="date" id="to-date" required>
                   <div class="invalid-feedback">
                     Please select date.
                   </div>
@@ -89,7 +94,7 @@
                 <div id="restaurant-selected">
                   No Restaurant Selected. 
                 </div>
-                <input id="restaurant-selected-id-input" type="text" class="d-none" required>
+                <input name="restaurant" id="restaurant-selected-id-input" type="text" class="d-none" required>
                 <div class="invalid-feedback">
                   Please select restaurant. Search for a restaurant to select.
                 </div>
@@ -98,7 +103,7 @@
 
             <div class="form-group">
               <label>Tags</label>
-              <input type="text" data-role="tagsinput">
+              <input name="tags" type="text" data-role="tagsinput">
               <small class="form-text text-muted">
                 Start typing and hit enter to enter tags.
               </small>
