@@ -26,17 +26,23 @@
       <h2 class="page-section-heading text-center text-secondary mb-4">Submit A Deal</h2>
       <div class="row">
         <div class="col-lg-8 mx-auto">
-          <form id="contactForm" name="dealform" novalidate="novalidate">
+          <form id="contactForm" name="dealform" novalidate class="needs-validation">
 
-            <div class="form-group">
+            <div class="form-group validate-me">
               <label for="img-input">Choose Image</label>
               <input type="file" class="form-control-file" id="img-input" required>
+              <div class="invalid-feedback">
+                Please add an image.
+              </div>
             </div>
             <img style="display: none;" id="img-preview" class="mw-100 my-4" src="#" alt="your image"/>
 
-            <div class="form-group">
+            <div class="form-group validate-me">
               <label for="description-input">Description</label>
               <input type="text" class="form-control" id="description-input" required>
+              <div class="invalid-feedback">
+                Please add a description.
+              </div>
             </div>
 
             <div class="form-group">
@@ -44,32 +50,58 @@
               <input type="text" class="form-control" id="source-input">
             </div>
 
-            <div class="form-group">
+            <div class="form-group validate-me">
               <label>Valid Date</label>
-              <div class="d-flex align-items-center">
-                <label class="mb-0 mr-1" for="from-date">From</label>
-                <input class="mr-1" type="date" id="from-date">
-                <label class="mb-0 mr-1" for="to-date">To</label>
-                <input class="mr-1" type="date" id="to-date">
+              <div class="row">
+                <div class="col-12 col-md-6">
+                  <label class="mb-0 mr-1" for="from-date">From</label>
+                  <input class="mr-1 form-control" type="date" id="from-date" required>
+                  <div class="invalid-feedback">
+                    Please select date.
+                  </div>
+                </div>
+                <div class="col-12 col-md-6">
+                  <label class="mb-0 mr-1" for="to-date">To</label>
+                  <input class="form-control" type="date" id="to-date" required>
+                  <div class="invalid-feedback">
+                    Please select date.
+                  </div>
+                </div>
               </div>
             </div>
 
             <div class="form-group">
               <label for="restaurant-input">Restaurant</label>
-              <input type="text" placeholder="Search for a restaurant..." class="form-control" id="restaurant-input">
-              <div class="search-menu-container">
-                <div id="restaurant-search-results" class="search-menu">
-                  helloworld
-                </div>
+              <div class="d-flex align-items-center">
+                <i class="fa fa-search mr-2"></i>
+                <input autocomplete="off"
+                  type="search"
+                  placeholder="Search for a restaurant..."
+                  id="restaurant-input"
+                  class="flex-grow-1"
+                  style="outline: 0;border-width: 0 0 2px;"
+                >
               </div>
-              <div id="restaurant-selected">
-                No Restaurant Selected. 
+              <div class="search-menu-container">
+                <div id="restaurant-search-results" class="search-menu"></div>
+              </div>
+              <div class="validate-me mt-2">
+                <div id="restaurant-selected">
+                  No Restaurant Selected. 
+                </div>
+                <input id="restaurant-selected-id-input" type="text" class="d-none" required>
+                <div class="invalid-feedback">
+                  Please select restaurant. Search for a restaurant to select.
+                </div>
               </div>
             </div>
 
             <div class="form-group">
               <label>Tags</label>
               <input type="text" data-role="tagsinput">
+              <small class="form-text text-muted">
+                Start typing and hit enter to enter tags.
+              </small>
             </div>
 
             <div class="form-group d-flex flex-row-reverse">

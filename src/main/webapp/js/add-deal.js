@@ -16,7 +16,7 @@ $('#img-input').change(function () {
 });
 
 function selectRestaurant(restaurant) {
-  console.log(restaurant, "selected")
+  console.log(restaurant)
   const restaurantDiv = $('#restaurant-selected')[0];
   restaurantDiv.innerHTML = `
     <div class="d-flex align-items-center p-2">
@@ -24,6 +24,8 @@ function selectRestaurant(restaurant) {
       <img class="search-menu-pic" src="${restaurant.pic}">
     </div>
   `
+  const restaurantHiddenInput = $('#restaurant-selected-id-input')[0];
+  restaurantHiddenInput.value = restaurant.id;
 }
 
 let keepSearchOpen = false;
@@ -40,6 +42,11 @@ function searchRestaurant() {
       "id": 4311,
       "name": "McDonald's",
       "pic": "https://d1nqx6es26drid.cloudfront.net/app/assets/img/logo_mcd.png"
+    },
+    {
+      "id": 9876,
+      "name": text,
+      "pic": "https://img.webmd.com/dtmcms/live/webmd/consumer_assets/site_images/article_thumbnails/other/cat_relaxing_on_patio_other/1800x1200_cat_relaxing_on_patio_other.jpg"
     }
   ]
   const menu = $('#restaurant-search-results')[0];
@@ -68,6 +75,23 @@ $('#restaurant-input').focus(function () {
 });
 $('#restaurant-input').blur(function () {
   $('#restaurant-search-results').hide()
+});
+
+const forms = document.getElementsByClassName('needs-validation');
+// Loop over them and prevent submission
+const validation = Array.prototype.filter.call(forms, function (form) {
+  form.addEventListener('submit', function (event) {
+    if (form.checkValidity() === false) {
+      event.preventDefault();
+      event.stopPropagation();
+    }
+    const validateGroup = form.querySelectorAll('.validate-me');
+    validateGroup.forEach((element) => {
+      element.classList.add('was-validated');
+    });
+    // form.classList.add('was-validated');
+
+  }, false);
 });
 
 /**
