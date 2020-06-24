@@ -20,11 +20,29 @@
 <body id="page-top">
   <%@include file="/WEB-INF/components/header.html"%>
   <div class="container">
-    <div>hello world1</div>
-    <div>hello world2</div>
-    <div>hello world3</div>
-    <div>hello world4</div>
-    <div>hello world5</div>
+    <div class="row mb-5">
+      <div class="col-md-8">
+        <h2 class="masthead-heading mb-6" id = "deal-title">Buy 5 Free 10</h3>
+        <img src="assets/deals/kfc.jpeg" id="deal-img" />
+        <h5 class="text-secondary">Description: <span id="deal-info"></span></h5>
+        <h5 class="text-secondary">Restaurant: <span id="restaurant-info">KFC (All outlets except Kidzania & Zoo)</span></h5>
+        <h5 class="text-secondary">Validity: <span id="start-date">22 June 2020</span> to <span id="end-date">24 June 2020</span></h5>
+        <h5 class="text-secondary">Posted by: <a href="/user/123">alicechen</a> </h5>
+      </div>
+    </div>
+  </div>
+  <div class= "container">
+    <div class="row">
+        <div class="col-sm-12">
+          <form id="my-form" class="hidden" enctype="multipart/form-data" method="POST">
+            <textarea style="width: 100%; max-width: 100%;" class="comment border border-info" type="text" name="comment" placeholder="Leave a comment..."></textarea>
+            <input type="submit" class="btn btn-secondary float-right" />
+          </form>
+        </div>
+    </div>
+    <div class="row">
+        <div class= "col-sm-12" id="comment-list"></div>
+    </div>
   </div>
   <%@include file="/WEB-INF/components/footer.html"%>
   <!-- Bootstrap core JS-->

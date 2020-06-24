@@ -22,10 +22,8 @@
   <!-- Masthead-->
   <header class="masthead bg-primary text-white text-center">
     <div class="container d-flex align-items-center flex-column">
-      <!-- Masthead Avatar Image-->
-      <img class="masthead-avatar mb-5" src="assets/img/avataaars.svg" alt="" />
       <!-- Masthead Heading-->
-      <h1 class="masthead-heading text-uppercase mb-0">Start Bootstrap</h1>
+      <h1 class="masthead-heading text-uppercase mb-8">Start Bootstrap</h1>
       <!-- Icon Divider-->
       <div class="divider-custom divider-light">
         <div class="divider-custom-line"></div>
@@ -50,34 +48,34 @@
       <!-- Portfolio Grid Items-->
       <div class="row">
         <!-- Portfolio Item 1-->
-        <div class="col-md-6 col-lg-4 mb-5">
+        <div class="col-md-4 col-lg-2 mb-2">
           <div class="portfolio-item mx-auto" data-toggle="modal" data-target="#portfolioModal1">
             <div class="portfolio-item-caption d-flex align-items-center justify-content-center h-100 w-100">
               <div class="portfolio-item-caption-content text-center text-white"><i class="fas fa-plus fa-3x"></i></div>
             </div>
-            <img class="img-fluid" src="assets/img/portfolio/cabin.png" alt="" />
+            <img class="img-fluid" src="assets/deals/dessert.jpeg" alt="" />
           </div>
         </div>
         <!-- Portfolio Item 2-->
-        <div class="col-md-6 col-lg-4 mb-5">
+        <div class="col-md-4 col-lg-2 mb-2">
           <div class="portfolio-item mx-auto" data-toggle="modal" data-target="#portfolioModal2">
             <div class="portfolio-item-caption d-flex align-items-center justify-content-center h-100 w-100">
               <div class="portfolio-item-caption-content text-center text-white"><i class="fas fa-plus fa-3x"></i></div>
             </div>
-            <img class="img-fluid" src="assets/img/portfolio/cake.png" alt="" />
+            <img class="img-fluid" src="assets/deals/bubble-tea.jpeg" alt="" />
           </div>
         </div>
         <!-- Portfolio Item 3-->
-        <div class="col-md-6 col-lg-4 mb-5">
+        <div class="col-md-4 col-lg-2 mb-2">
           <div class="portfolio-item mx-auto" data-toggle="modal" data-target="#portfolioModal3">
             <div class="portfolio-item-caption d-flex align-items-center justify-content-center h-100 w-100">
               <div class="portfolio-item-caption-content text-center text-white"><i class="fas fa-plus fa-3x"></i></div>
             </div>
-            <img class="img-fluid" src="assets/img/portfolio/circus.png" alt="" />
+            <img class="img-fluid" src="assets/deals/kfc.jpeg" alt="" />
           </div>
         </div>
         <!-- Portfolio Item 4-->
-        <div class="col-md-6 col-lg-4 mb-5 mb-lg-0">
+        <div class="col-md-4 col-lg-2 mb-2 mb-lg-0">
           <div class="portfolio-item mx-auto" data-toggle="modal" data-target="#portfolioModal4">
             <div class="portfolio-item-caption d-flex align-items-center justify-content-center h-100 w-100">
               <div class="portfolio-item-caption-content text-center text-white"><i class="fas fa-plus fa-3x"></i></div>
@@ -86,7 +84,7 @@
           </div>
         </div>
         <!-- Portfolio Item 5-->
-        <div class="col-md-6 col-lg-4 mb-5 mb-md-0">
+        <div class="col-md-4 col-lg-2 mb-2 mb-md-0">
           <div class="portfolio-item mx-auto" data-toggle="modal" data-target="#portfolioModal5">
             <div class="portfolio-item-caption d-flex align-items-center justify-content-center h-100 w-100">
               <div class="portfolio-item-caption-content text-center text-white"><i class="fas fa-plus fa-3x"></i></div>
@@ -95,7 +93,7 @@
           </div>
         </div>
         <!-- Portfolio Item 6-->
-        <div class="col-md-6 col-lg-4">
+        <div class="col-md-4 col-lg-2">
           <div class="portfolio-item mx-auto" data-toggle="modal" data-target="#portfolioModal6">
             <div class="portfolio-item-caption d-flex align-items-center justify-content-center h-100 w-100">
               <div class="portfolio-item-caption-content text-center text-white"><i class="fas fa-plus fa-3x"></i></div>
