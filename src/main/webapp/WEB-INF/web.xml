@@ -13,13 +13,12 @@
         <jsp-file>/WEB-INF/jsp/deals.jsp</jsp-file>
     </servlet>
     <servlet>
-<<<<<<< HEAD
         <servlet-name>profile</servlet-name>
         <jsp-file>/profile.jsp</jsp-file>
-=======
+    </servlet>
+    <servlet>
         <servlet-name>addDeal</servlet-name>
         <jsp-file>/WEB-INF/jsp/add-deal.jsp</jsp-file>
->>>>>>> c45ede8332077e92b3f8ebf743aa09f647597c1e
     </servlet>
 
     <servlet-mapping>
@@ -31,12 +30,11 @@
         <url-pattern>/deals/*</url-pattern>
     </servlet-mapping>
     <servlet-mapping>
-<<<<<<< HEAD
         <servlet-name>profile</servlet-name>
         <url-pattern>/profile/*</url-pattern>
-=======
+    </servlet-mapping>
+    <servlet-mapping>
         <servlet-name>addDeal</servlet-name>
         <url-pattern>/add-deal/*</url-pattern>
->>>>>>> c45ede8332077e92b3f8ebf743aa09f647597c1e
     </servlet-mapping>
 </web-app>
