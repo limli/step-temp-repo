@@ -10296,8 +10296,40 @@ body > .container {
   max-width: 50px;
   max-height: 50px;
 }
+
 .search-menu-item:hover {
   color: #212529;
   background-color: rgba(0, 0, 0, 0.075);
   cursor: pointer;
+}
+
+.upvote {
+  width: 100%;
+  height: 60px;
+  background-image: url(/../assets/img/upvote-button.png);
+  background-repeat: no-repeat;
+  background-size: cover;
+}
+
+.downvote {
+  width: 100%;
+  height: 60px;;
+  background-image: url(/../assets/img/downvote-button.png);
+  background-repeat: no-repeat;
+  background-size: cover;
+}
+
+#header-bg-img {
+  background-image: url(/../assets/img/food-photo.jpeg);
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-position: center center;
+}
+
+.home-deal-img {
+  height: 270px;
+}
+
+.see-more-link {
+  display:inline-block;
 }

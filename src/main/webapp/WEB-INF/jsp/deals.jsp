@@ -23,8 +23,8 @@
   <div class="container">
     <div class="row mb-5 mt-5">
       <div class="col-md-8">
-        <h2 class="masthead-heading mb-6" id = "deal-title">Buy 5 Free 10</h3>
-        <img src="assets/deals/kfc.jpeg" id="deal-img" />
+        <h2 class="masthead-heading mb-6" id = "deal-title">Buy 5 Free 10</h2>
+        <img src="../../assets/deals/kfc.jpeg" id="deal-img" />
       </div>
     </div>
     <nav>
