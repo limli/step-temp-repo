@@ -110,6 +110,7 @@ const user =
   ]
 }
 
+/** Configures user's profile. */
 function configureUserProfile(user) {
   const nameContainer = document.getElementById('name');
   nameContainer.innerText = user.name;
@@ -129,6 +130,7 @@ function configureUserProfile(user) {
   configureTagsFollowedBy(user);
 }
 
+/** Creates a container for deal. */
 function createDealCard(deal) {
   const dealCard = document.createElement('div');
   dealCard.classList.add('deal-card', 'card');
@@ -170,6 +172,7 @@ function configureDealsPublishedBy(user) {
   }
 }
 
+/** Returns a container with user profile photo and username. */
 function createSimpleUserContainer(user) {
   const userContainer = document.createElement('div');
   userContainer.className = 'mb-2';
@@ -190,6 +193,7 @@ function createSimpleUserContainer(user) {
   return userContainer;
 }
 
+/** Adds a list of users to the container. */
 function configureUserList(userList, container) {
   for (const user of userList) {
     const userContainer = createSimpleUserContainer(user);
@@ -208,6 +212,7 @@ function configureUserFollowers(user) {
   configureUserList(user.followers, followersContainer);
 }
 
+/** Returns a container with restaurant's photo and name. */
 function createSimpleRestaurantContainer(restaurant) {
   const restaurantContainer = document.createElement('div');
   restaurantContainer.className = 'mb-2';
@@ -236,6 +241,7 @@ function configureRestaurantsFollowedBy(user) {
   }
 }
 
+/** Returns a container with tag's name. */
 function createTagContainer(tag) {
   const tagContainer = document.createElement('span');
   tagContainer.className = 'badge badge-pill badge-primary';
@@ -284,6 +290,7 @@ function showProfileEditingStatus(user) {
   }
 }
 
+/** Shows preview of the uploaded photo. */
 function profilePhotoPreview(input) {
   if (input.files && input.files[0]) {
     const reader = new FileReader();
@@ -297,6 +304,7 @@ function profilePhotoPreview(input) {
   }
 }
 
+/** Cancels profile editing. */
 function cancelProfileEditing() {
   const profile = document.getElementById('profile');
   profile.hidden = false;
