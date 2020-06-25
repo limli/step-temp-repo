@@ -52,6 +52,9 @@
 
             <div class="form-group">
               <label for="source-input">Source</label>
+              <small class="text-muted">
+                (Optional)
+              </small>
               <input name="source" type="text" class="form-control" id="source-input">
             </div>
 
@@ -60,14 +63,14 @@
               <div class="row">
                 <div class="col-12 col-md-6">
                   <label class="mb-0 mr-1" for="from-date">From</label>
-                  <input name="from" class="mr-1 form-control" type="date" id="from-date" required>
+                  <input name="start" class="mr-1 form-control" type="date" id="from-date" required>
                   <div class="invalid-feedback">
                     Please select date.
                   </div>
                 </div>
                 <div class="col-12 col-md-6">
                   <label class="mb-0 mr-1" for="to-date">To</label>
-                  <input name="to" class="form-control" type="date" id="to-date" required>
+                  <input name="end" class="form-control" type="date" id="to-date" required>
                   <div class="invalid-feedback">
                     Please select date.
                   </div>
