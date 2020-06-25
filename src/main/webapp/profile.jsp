@@ -23,10 +23,13 @@
   <%@include file="/WEB-INF/components/header.html"%>
   <div id="user-profile" class="page-section">
     <div class="container">
-      <div class="row mb-5">
+      <div id="profile" class="row mb-5">
         <div class="col-sm-4 col-lg-3">
           <img id="profile-photo" class="img-fluid mb-4" alt="profile-photo"/>
           <button id="follow-btn" type="button" class="btn btn-primary">Follow</button>
+          <button id="edit-profile-btn" type="button" class="btn btn-primary">
+            Edit profile
+          </button>
         </div>
         <div class="col-sm-8 col-lg-9">
           <h3 id="username">
@@ -46,39 +49,45 @@
         </div>
       </div>
 
-      <form id="profile-form" enctype="multipart/form-data">
-        <div class="form-group row">
-          <label for="username-input" class="col-sm-2 col-form-label">Username</label>
-          <div class="col-sm-10">
-            <input type="text" class="form-control" id="username-input">
+      <form id="profile-form" class="row mb-5" enctype="multipart/form-data" hidden>
+        <div class="col-sm-4 col-lg-3">
+          <img id="profile-photo-preview" class="img-fluid mb-4" alt="profile-photo"/>
+        </div>
+        <div class="col-sm-8 col-lg-9">
+          <div class="form-group row">
+            <label for="username-input" class="col-sm-2 col-form-label">Username</label>
+            <div class="col-sm-10">
+              <input type="text" class="form-control" id="username-input" placeholder="Enter a username">
+            </div>
           </div>
-        </div>
-        <div class="form-group row">
-          <label for="profile-photo-input" class="col-sm-2 col-form-label">Profile photo</label>
-
-          <div id="profile-photo-input' class="custom-file col-sm-10">
-            <input type="file" class="custom-file-input" id="profile-photo-file">
-            <label class="custom-file-label" for="profile-photo-file">Choose file</label>
+          <div class="form-group row">
+            <label for="profile-photo-input" class="col-sm-2 col-form-label">Profile photo</label>
+            <input type="file" 
+                class="form-control-file col-sm-10""
+                id="profile-photo-file" 
+                onchange="profilePhotoPreview(this);">
           </div>
-        </div>
-        <div class="form-group row">
-          <label for="name-input" class="col-sm-2 col-form-label">Name</label>
-          <div class="col-sm-10">
-            <input type="text" class="form-control" id="name-input">
+          <div class="form-group row">
+            <label for="name-input" class="col-sm-2 col-form-label">Name</label>
+            <div class="col-sm-10">
+              <input type="text" class="form-control" id="name-input">
+            </div>
           </div>
-        </div>
-        <div class="form-group row">
-          <label for="email-input" class="col-sm-2 col-form-label">Email</label>
-          <div class="col-sm-10">
-            <input type="text" class="form-control" id="email-input" readonly>
+          <div class="form-group row">
+            <label for="email-input" class="col-sm-2 col-form-label">Email</label>
+            <div class="col-sm-10">
+              <input type="text" class="form-control" id="email-input" readonly>
+            </div>
           </div>
+          <div class="form-group row">
+            <label for="bio-input" class="col-form-label col-sm-2">Bio</label>
+            <div class="col-sm-10">
+              <textarea class="form-control" id="bio-input" maxlength="150"></textarea>
+            </div>
+          </div>
+          <button type="submit" class="btn btn-primary">Save</button>
+          <button type="button" class="btn btn-primary mx-2" onclick="cancelProfileEditing();">Cancel</button>
         </div>
-        <div class="form-group">
-          <label for="bio-input" class="col-form-label">Bio</label>
-          <textarea class="form-control" id="bio-input" maxlength="150"></textarea>
-        </div>
-        <button type="submit" class="btn btn-primary">Submit</button>
-        <button type="submit" class="btn btn-primary">Cancel</button>
       </form>
       <nav>
         <div class="nav nav-tabs mb-2" id="nav-tab" role="tablist">

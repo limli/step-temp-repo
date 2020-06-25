@@ -48,37 +48,37 @@ const user =
         'id': 1234,
         'name': 'Alice Chen',
         'username': 'alicechen',
-        'pic': '/assets/img/avataaars.svg'
+        'picture': '/assets/img/avataaars.svg'
       },
       {
         'id': 1234,
         'name': 'Alice Chen',
         'username': 'alicechen',
-        'pic': '/assets/img/avataaars.svg'
+        'picture': '/assets/img/avataaars.svg'
       },
       {
         'id': 1234,
         'name': 'Alice Chen',
         'username': 'alicechen',
-        'pic': '/assets/img/avataaars.svg'
+        'picture': '/assets/img/avataaars.svg'
       },
       {
         'id': 1234,
         'name': 'Alice Chen',
         'username': 'alicechen',
-        'pic': '/assets/img/avataaars.svg'
+        'picture': '/assets/img/avataaars.svg'
       },
       {
         'id': 1234,
         'name': 'Alice Chen',
         'username': 'alicechen',
-        'pic': '/assets/img/avataaars.svg'
+        'picture': '/assets/img/avataaars.svg'
       },
       {
         'id': 1234,
         'name': 'Alice Chen',
         'username': 'alicechen',
-        'pic': '/assets/img/avataaars.svg'
+        'picture': '/assets/img/avataaars.svg'
       }
   ],
   'following': [
@@ -86,20 +86,20 @@ const user =
           'id': 1234,
           'name': 'Alice Chen',
           'username': 'alicechen',
-          'pic': '/assets/img/avataaars.svg'
+          'picture': '/assets/img/avataaars.svg'
       },
       {
         'id': 2345,
         'name': 'Starbucks',
         'username': 'starbucks',
-        'pic': '/assets/img/avataaars.svg'
+        'picture': '/assets/img/avataaars.svg'
     },
   ],
   'restaurantsFollowed': [
     {
       'id': 2345,
       'name': 'Starbucks',
-      'pic': '/assets/img/avataaars.svg'
+      'picture': '/assets/img/avataaars.svg'
     },
   ],
   'tagsFollowed': [
@@ -176,7 +176,7 @@ function createSimpleUserContainer(user) {
   const imageContainer = document.createElement('div');
   imageContainer.className = 'w-25 d-inline-block text-center';
   const profileImage = document.createElement('img');
-  profileImage.src = user.pic;
+  profileImage.src = user.picture;
   profileImage.alt = 'profile photo';
   profileImage.className = 'img-fluid w-50 mx-auto';
   imageContainer.appendChild(profileImage);
@@ -214,7 +214,7 @@ function createSimpleRestaurantContainer(restaurant) {
   const imageContainer = document.createElement('div');
   imageContainer.className = 'w-25 d-inline-block text-center';
   const restaurantImage = document.createElement('img');
-  restaurantImage.src = restaurant.pic;
+  restaurantImage.src = restaurant.picture;
   restaurantImage.alt = 'restaurant photo';
   restaurantImage.className = 'img-fluid w-50 mx-auto';
   imageContainer.appendChild(restaurantImage);
@@ -252,6 +252,60 @@ function configureTagsFollowedBy(user) {
   }
 }
 
+function configureProfileEditButton(user) {
+  const profileEditButton = document.getElementById('edit-profile-btn');
+  profileEditButton.onclick = function() {
+    showProfileEditingStatus(user);
+  }
+}
+
+function showProfileEditingStatus(user) {
+  const profile = document.getElementById('profile');
+  profile.hidden = true;
+  const profileForm = document.getElementById('profile-form');
+  profileForm.hidden = false;
+  const emailInput = document.getElementById('email-input');
+  emailInput.value = user.email;
+  if (typeof user.picture != 'undefined') {
+    const profilePhotoPreview = document.getElementById('profile-photo-preview');
+    profilePhotoPreview.src = user.picture;
+  }
+  if (typeof user.username != 'undefined') {
+    const usernameInput = document.getElementById('username-input');
+    usernameInput.value = user.username;
+  }
+  if (typeof user.name != 'undefined') {
+    const nameInput = document.getElementById('name-input');
+    nameInput.value = user.username;
+  }
+  if (typeof user.bio != 'undefined') {
+    const bioInput = document.getElementById('bio-input');
+    bioInput.value = user.bio;
+  }
+}
+
+function profilePhotoPreview(input) {
+  if (input.files && input.files[0]) {
+    const reader = new FileReader();
+    
+    reader.onload = function(e) {
+      const profilePhotoPreview = document.getElementById('profile-photo-preview');
+      profilePhotoPreview.src = e.target.result;
+    }
+    
+    reader.readAsDataURL(input.files[0]);
+  }
+}
+
+function cancelProfileEditing() {
+  const profile = document.getElementById('profile');
+  profile.hidden = false;
+  const profileForm = document.getElementById('profile-form');
+  profileForm.hidden = true;
+  
+}
+
 window.onload = function() {
   configureUserProfile(user);
+  configureProfileEditButton(user);
 }
