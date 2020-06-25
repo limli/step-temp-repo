@@ -40,11 +40,46 @@
           <div class="mt-2">
             Bio: <span id="bio"></span>
           </div>
-          
+
           <div id="tags" class="mt-2">
           </div>
         </div>
       </div>
+
+      <form id="profile-form" enctype="multipart/form-data">
+        <div class="form-group row">
+          <label for="username-input" class="col-sm-2 col-form-label">Username</label>
+          <div class="col-sm-10">
+            <input type="text" class="form-control" id="username-input">
+          </div>
+        </div>
+        <div class="form-group row">
+          <label for="profile-photo-input" class="col-sm-2 col-form-label">Profile photo</label>
+
+          <div id="profile-photo-input' class="custom-file col-sm-10">
+            <input type="file" class="custom-file-input" id="profile-photo-file">
+            <label class="custom-file-label" for="profile-photo-file">Choose file</label>
+          </div>
+        </div>
+        <div class="form-group row">
+          <label for="name-input" class="col-sm-2 col-form-label">Name</label>
+          <div class="col-sm-10">
+            <input type="text" class="form-control" id="name-input">
+          </div>
+        </div>
+        <div class="form-group row">
+          <label for="email-input" class="col-sm-2 col-form-label">Email</label>
+          <div class="col-sm-10">
+            <input type="text" class="form-control" id="email-input" readonly>
+          </div>
+        </div>
+        <div class="form-group">
+          <label for="bio-input" class="col-form-label">Bio</label>
+          <textarea class="form-control" id="bio-input" maxlength="150"></textarea>
+        </div>
+        <button type="submit" class="btn btn-primary">Submit</button>
+        <button type="submit" class="btn btn-primary">Cancel</button>
+      </form>
       <nav>
         <div class="nav nav-tabs mb-2" id="nav-tab" role="tablist">
           <a class="nav-item nav-link active" id="nav-deals-tab" data-toggle="tab" href="#deals" role="tab" aria-controls="deals" aria-selected="true">Deals</a>
