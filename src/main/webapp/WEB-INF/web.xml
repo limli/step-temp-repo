@@ -13,6 +13,10 @@
         <jsp-file>/WEB-INF/jsp/deals.jsp</jsp-file>
     </servlet>
     <servlet>
+        <servlet-name>profile</servlet-name>
+        <jsp-file>/profile.jsp</jsp-file>
+    </servlet>
+    <servlet>
         <servlet-name>addDeal</servlet-name>
         <jsp-file>/WEB-INF/jsp/add-deal.jsp</jsp-file>
     </servlet>
@@ -24,6 +28,10 @@
     <servlet-mapping>
         <servlet-name>deals</servlet-name>
         <url-pattern>/deals/*</url-pattern>
+    </servlet-mapping>
+    <servlet-mapping>
+        <servlet-name>profile</servlet-name>
+        <url-pattern>/profile/*</url-pattern>
     </servlet-mapping>
     <servlet-mapping>
         <servlet-name>addDeal</servlet-name>
